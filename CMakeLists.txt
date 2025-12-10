@@ -33,6 +33,7 @@ target_compile_options(reduce PRIVATE
     -Xcompiler -march=native
     -Xcompiler -Wall
     -O3 --use_fast_math>
+    -arch=sm_86
 )
 target_link_libraries(reduce PRIVATE OpenMP::OpenMP_CXX 
      ${CUDA_LIBRARIES}
