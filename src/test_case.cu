@@ -7,7 +7,11 @@
 #include <cuda_runtime.h>
 
 
-void test_reduce(const int len,const int iter_time){
+void test_reduce(const int len,const int iter_time)
+{
+    printf("+--------\n");
+    printf("cuReduce.cu\n");
+
     float * a =(float*)malloc(len * sizeof(float));
     Gen_Matrix<float>(a,len);
     float sum=0.0f;
@@ -43,7 +47,8 @@ void test_reduce(const int len,const int iter_time){
     cudaFree(d_in);
     free(a);
 
-    printf("\n\n\n\n\n\n\n\n");
+    printf("+--------\n");
+    printf("cuReductionOptimized.cu\n");
     
     float * a =(float*)malloc(len * sizeof(float));
     Gen_Matrix<float>(a,len);
